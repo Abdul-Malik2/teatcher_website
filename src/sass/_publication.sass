@@ -1,0 +1,31 @@
+.publication
+    &__container
+        background-color: #e0dddd
+        @include animation-mix (departure_page, 3s, .5s, 1)
+        align-items: center
+        @include respond (horizontal)
+            height: 93vh
+        @include respond (tab-port)
+            height: 97vh
+
+    
+        
+
+.carousel
+    //grid-row: 2/3
+.carousel-inner
+    padding-top: 0rem
+    width: 90%
+    margin: 0 auto
+    @include respond (horizontal)
+        margin: 0 auto
+        width: 16rem
+    @include respond (tab-port)
+        width: 45rem
+
+
+svg
+    color: $color-MAIN
+
+
+

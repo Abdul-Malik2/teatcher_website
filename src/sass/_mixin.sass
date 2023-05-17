@@ -1,0 +1,9 @@
+@mixin animation-mix ($name, $duration, $delay, $iteration )
+    animation-name: $name
+    animation-duration: $duration// если не указать время анимация не заработает
+    animation-delay: $delay// задержка анимации чтобы сайт успел прогрузиться
+    animation-timing-function: ease linear // чтобы анимация была плавная
+    backface-visibility: hidden //на всякий случай, чтобы анимация не глючила
+    animation-fill-mode: backwards // чтобы анимация начиналась с определенного кадра(в данном случае с пявления)
+    animation-iteration-count: $iteration//сколько раз будет повторяться
+    transition: all

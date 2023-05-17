@@ -1,0 +1,69 @@
+.nav-menu
+    &__button
+        &:link, &:visited
+            margin-right: calc( 50vw - 7.5rem ) // выравниваю для всех устройств так как айфон не корректно воспроизводит центрирование с помощью right и left пришлось варавнивать кнопки по центру с помощью margin
+            margin-left: calc( 50vw - 7.5rem ) // выравниваю только для Iphont
+            background: $gradient-for-button
+            color: white
+            text-decoration: none
+            padding: 1rem
+            border: .2rem white solid
+            border-radius: 1rem
+            -webkit-tap-highlight-color: transparent 
+            width: 17rem
+            height: 4rem
+            box-shadow: 0rem .5rem .5rem $color-MAIN
+            font-family: 'Robot-light', 'Robot-bobot', 'sans-serif'
+            font-size: 1.6rem
+            text-align: center
+            letter-spacing: .2rem
+            text-transform: uppercase
+            
+
+        &:hover
+            box-shadow: 0rem .7rem .7rem $color-MAIN
+            transform: translateY(-.2rem)
+
+        &:active
+            box-shadow: 0rem .2rem .2rem $color-MAIN
+            transform: translateY(.5rem)
+
+
+.button
+    background: $gradient-MAIN
+    border: .2rem white solid
+    border-radius: 1rem
+    -webkit-tap-highlight-color: transparent // чтобы при нажатии не меняла цвет
+    &__publicaition
+        height: 4.7rem
+        display: block
+        box-shadow: 0rem .5rem 1rem $color-MAIN
+        margin: 0 auto
+        margin-bottom: 3.5rem
+        &:active
+            box-shadow: 0rem .2rem .5rem $color-MAIN
+            transform: translateY(.5rem)
+    &__footer
+        height: 5rem
+        box-shadow: 0rem .5rem .5rem $color-MAIN
+
+
+.link
+    &:link, &:visited
+        color: white
+        text-decoration: none
+        -webkit-tap-highlight-color: transparent // чтобы при нажатии не меняла цвет
+        padding: 1rem
+
+    &__publicaition
+        font-size: 1.6rem
+        @include respond (horizontal)
+                font-size: .9rem
+        @include respond (tab-port)
+                font-size: 2.2rem
+    &__footer
+        height: 100%
+        display: flex
+        align-items: center
+        font-size: 2rem
+

@@ -1,0 +1,62 @@
+.nav-menu
+    position: fixed
+    display: flex
+    flex-wrap: wrap
+    align-items: end
+    -webkit-tap-highlight-color: transparent // чтобы при нажатии не меняла цвет
+    min-height: 21rem //35vh // for 5 buttons
+    width: 100%
+    z-index: 7
+    transition: 1s all
+    flex-direction: column
+    justify-content: space-evenly
+    top: 100vh
+    right: 0
+    @include respond (horizontal)
+        top: 10vh
+        right: -100vw
+        min-height: 25rem
+    @include respond (tab-port)
+        top: 25vh
+    &_active
+        top: 55vh
+        @include respond (horizontal)
+            top: 10vh
+            right: 0
+        @include respond (tab-port)
+            top: 25vh
+
+
+
+.hamburger
+    width: 5rem
+    height: 5rem
+    position: fixed
+    top: 3rem
+    left: 85%
+    z-index: 11
+    cursor: pointer
+    -webkit-tap-highlight-color: transparent // чтобы при нажатии не меняла цвет
+    &__span
+        border: .1rem white solid
+        border-radius: 10rem
+        height: .6rem
+        width: 4rem
+        display: block
+        background: $gradient-MAIN
+        -webkit-tap-highlight-color: transparent // чтобы при нажатии не меняла цвет
+        &:not(:last-child)
+            margin-bottom: .5rem
+        transition: 1s all
+        backface-visibility: hidden
+
+.hamburger_active
+    .hamburger__span
+        -webkit-tap-highlight-color: transparent // чтобы при нажатии не меняла цвет
+        margin-bottom: -2px
+        &:nth-last-child(1)
+            transform: translateY(2px) rotate(-45deg)
+        &:nth-last-child(2)
+                display: none
+        &:nth-last-child(3)
+            transform: translateY(4px) rotate(45deg)

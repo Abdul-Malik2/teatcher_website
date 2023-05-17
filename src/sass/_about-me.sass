@@ -1,0 +1,102 @@
+.second-section
+    min-height: 100%
+    width: 100%
+
+.about-me
+    @include animation-mix (departure_page, 3s, .5s, 1)
+    min-height: 50rem
+    width: 100%
+    padding: 1rem
+
+    @include respond (horizontal)
+        padding-left: 5vw
+        padding-right: 5vw
+
+    display: grid
+    grid: minmax(14rem, max-content)  min-content min-content / min-content 1fr //  grid: 5% min-content min-content 15% / min-content 1fr
+    @include respond (horizontal)
+        grid-template-rows: repeat(4, min-content)
+        
+    justify-items: center
+    gap: 1rem
+
+    &__title
+        @include animation-mix (departure_page, 3s, .5s, 1)
+        //grid-column: 1/3
+        //align-self: center
+
+    &__wrapper-img
+        grid-row: 1/2//2/3
+        grid-column: 1/2
+        border: .7rem solid white
+        height: 14rem
+        width: 10rem
+
+        @include respond (horizontal)
+            grid-row: 1/3//2/4
+            margin-left: 2vw
+            height: 22vw
+            width: 15vw
+        
+    &__biografy-1
+        grid-row: 1/2//2/3
+        grid-column: 2/3
+        align-self: center
+
+    &__biografy-2
+        grid-column: 1/3
+        grid-row: 2/3//3/4
+        grid-column: 1/3
+        align-self: start
+
+        @include respond (horizontal)
+            grid-column: 2/3
+            align-self: end
+        
+.awards
+    grid-row: 3/4//4/5
+    grid-column: 1/3
+    
+    &__item
+        margin-top: .9rem
+        margin-bottom: .9rem
+
+.footer
+    background: $gradient-MAIN
+
+    &__title
+        padding-top: .8rem
+
+    &__hr
+        color: $color-MAIN
+        &_top
+            border-top: .4rem ridge $color-MAIN
+        &_bottom
+            border-bottom: .4rem ridge $color-MAIN
+
+.connection
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+    height: 8rem
+    & > *
+        &:hover
+            box-shadow: 0rem .7rem .5rem $color-MAIN
+            transform: translateY(-.3rem)
+        &:active
+            box-shadow: 0rem .2rem .5rem $color-MAIN
+            transform: translateY(.5rem)
+        &:not(:last-child) // так как при нажатии иконки опять становятся квадратными 
+            border-radius: 100rem // чтобы кнопка не округлилась
+    &__link
+        -webkit-tap-highlight-color: transparent // чтобы при нажатии не меняла цвет
+
+.icon
+    width: 4rem
+    height: 4rem
+    border-radius: 100rem
+    box-shadow: 0rem .5rem .5rem $color-MAIN
+    &-1
+        width: 2rem
+        height: 2rem
+

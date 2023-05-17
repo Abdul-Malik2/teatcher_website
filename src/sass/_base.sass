@@ -1,0 +1,68 @@
+$color-green-dark: #425844
+$color-green-light: #61A568
+
+$color-blue-dark: #101D2C
+
+$color-gray-dark: #AAAAAA
+$color-gray-light: #F5F5F5
+    
+$color-purpur: #c86acf
+$color-blue: #5980c3
+
+$gradient-purpur: linear-gradient(90deg, rgba($color-purpur, 0.4), rgba($color-blue, 0.4))
+
+$color-MAIN: #c86acf
+$gradient-MAIN: linear-gradient(90deg, rgba($color-purpur, 0.5), rgba($color-blue, 0.5))
+$gradient-for-button: linear-gradient(90deg, rgba($color-purpur, 0.7), rgba($color-blue, 0.7))
+
+*, ::after, ::before
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+@mixin respond($breakpoint)
+    @if $breakpoint == phone  // это самый большёй экран, но указан в самом конце, потомучто в описании его аргумента было применено свойство min-width
+        @media only screen and (min-width: 390px) // если в описании аргумента было применено свойство min-width т.е. свойсва адаптации (@include) мы начинаем прописывать снизу вверх, т.е. от самого маленького экрана к большему.  Если это правило будет проигнорированно, то свйства адаптации не сработают
+            @content
+
+    @if $breakpoint == horizontal // это самый большёй экран, но указан в самом конце, потомучто в описании его аргумента было применено свойство min-width
+        @media only screen and (min-width: 479px) // если в описании аргумента было применено свойство min-width т.е. свойсва адаптации (@include) мы начинаем прописывать снизу вверх, т.е. от самого маленького экрана к большему.  Если это правило будет проигнорированно, то свйства адаптации не сработают
+            @content
+
+    @if $breakpoint == tab-port // это самый большёй экран, но указан в самом конце, потомучто в описании его аргумента было применено свойство min-width
+        @media only screen and (min-width: 991px) // если в описании аргумента было применено свойство min-width т.е. свойсва адаптации (@include) мы начинаем прописывать снизу вверх, т.е. от самого маленького экрана к большему.  Если это правило будет проигнорированно, то свйства адаптации не сработают
+            @content
+
+
+html
+    font-size: 62.5%
+    font-family: 'Robot-bobot'
+
+    scroll-behavior: smooth
+    &:target
+        scroll-margin-top: 2rem
+
+body
+    background-color: white
+    padding: 1rem
+    height: 100vh
+    
+
+    
+
+.container
+    min-height: 100%
+    margin: 0 auto
+    position: relative
+    z-index: 0 // чтобы его дочерние элементы (т.е. bg), не проваливались сквозь него
+    &__main
+        background-color: #e0dddd
+        container-type:  inline-size
+
+    &__about-me
+        background: #f2edc3a4
+    &__master-class
+        //background: black
+        height: 100%
+        
+    
